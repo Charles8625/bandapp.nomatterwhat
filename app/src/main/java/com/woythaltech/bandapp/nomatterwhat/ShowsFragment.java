@@ -2,18 +2,26 @@ package com.woythaltech.bandapp.nomatterwhat;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ShowsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class ShowsFragment extends Fragment {
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ShowsFragment extends Fragment implements View.OnClickListener{
+
+    public final static List<Show> showList = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private ShowAdapter showAdapter;
 
     public ShowsFragment() {
         // Required empty public constructor
@@ -27,8 +35,68 @@ public class ShowsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_shows, container, false);
+        View showFragView =  inflater.inflate(R.layout.fragment_shows, container, false);
 
-        return view;
+        recyclerView = showFragView.findViewById(R.id.recyclerViewShows);
+        showAdapter = new ShowsFragment.ShowAdapter();
+        recyclerView.setAdapter(showAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+
+        return showFragView;
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    // ViewHolder Class
+
+    static class ShowViewHolder extends RecyclerView.ViewHolder {
+
+        TextView showVenue;
+        TextView showAddress;
+        TextView showTime;
+        TextView showDate;
+
+        public ShowViewHolder(@NonNull @NotNull View itemView) {
+
+            super(itemView);
+
+            showVenue = itemView.findViewById(R.id.showVenue);
+            showAddress = itemView.findViewById(R.id.showAddress);
+            showTime= itemView.findViewById(R.id.showTime);
+            showDate = itemView.findViewById(R.id.showDate);
+
+        }
+    }
+
+
+    // ShowAdapter Class
+
+    class ShowAdapter extends RecyclerView.Adapter<ShowsFragment.ShowViewHolder>{
+
+
+        @NonNull
+        @Override
+        public ShowsFragment.ShowViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View itemView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.show_row, parent, false);
+
+            itemView.setOnClickListener(ShowsFragment.this);
+            return new ShowsFragment.ShowViewHolder(itemView);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull @NotNull ShowsFragment.ShowViewHolder holder, int position) {
+            Show show = showList.get(position);
+
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return showList.size();
+        }
     }
 }
