@@ -39,11 +39,12 @@ public class MusicFragment extends Fragment implements View.OnClickListener {
 
         View musicFragView =  inflater.inflate(R.layout.fragment_music, container, false);
 
-
         // For testing purposes
         Song trance = new Song("Trance", "No Matter What", "2017");
         Song locked = new Song("Locked and Loaded", "No Matter What", "2017");
         Song biPolar = new Song("Bi-Polar", "No Matter What", "2017");
+
+        songList.clear();
 
         songList.add(trance);
         songList.add(locked);
@@ -53,7 +54,6 @@ public class MusicFragment extends Fragment implements View.OnClickListener {
         musicAdapter = new MusicAdapter();
         recyclerView.setAdapter(musicAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-
 
         return musicFragView;
     }
