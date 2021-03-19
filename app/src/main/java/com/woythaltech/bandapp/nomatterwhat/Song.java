@@ -1,5 +1,6 @@
 package com.woythaltech.bandapp.nomatterwhat;
 
+
 import java.io.Serializable;
 
 public class Song implements Serializable {
@@ -7,12 +8,14 @@ public class Song implements Serializable {
     private final String songName;
     private final String bandName;
     private final String releaseYear;
+    private final String lyrics;
 
-    Song(String songName, String bandName, String releaseYear){
+    Song(String songName, String bandName, String releaseYear, String lyrics){
 
         this.songName = songName;
         this.bandName = bandName;
         this.releaseYear = releaseYear;
+        this.lyrics = lyrics;
 
     }
 
@@ -27,4 +30,6 @@ public class Song implements Serializable {
     String getReleaseYear(){
         return releaseYear;
     }
+
+    String getLyrics() { return lyrics; }
 }

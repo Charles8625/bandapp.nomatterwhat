@@ -1,5 +1,6 @@
 package com.woythaltech.bandapp.nomatterwhat;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +25,9 @@ public class MusicFragment extends Fragment implements View.OnClickListener {
 
     public final static List<Song> songList = new ArrayList<>();
     private RecyclerView recyclerView;
-    private MusicAdapter musicAdapter;
+    private MusicFragment.MusicAdapter musicAdapter;
+
+
 
     public MusicFragment() {
         // Required empty public constructor
@@ -39,16 +43,18 @@ public class MusicFragment extends Fragment implements View.OnClickListener {
 
         View musicFragView =  inflater.inflate(R.layout.fragment_music, container, false);
 
-        // For testing purposes
-        Song trance = new Song("Trance", "No Matter What", "2017");
-        Song locked = new Song("Locked and Loaded", "No Matter What", "2017");
-        Song biPolar = new Song("Bi-Polar", "No Matter What", "2017");
+        // For testing purposes, will grab these from json file later
+        Song trance = new Song("Trance", "No Matter What", "2017", "Lyrics");
+        Song locked = new Song("Locked and Loaded", "No Matter What", "2017", "Lyrics");
+        Song biPolar = new Song("Bi-Polar", "No Matter What", "2017", "Lyrics");
 
         songList.clear();
 
         songList.add(trance);
         songList.add(locked);
         songList.add(biPolar);
+
+        ///////////////////////////////
 
         recyclerView = musicFragView.findViewById(R.id.recyclerViewMusic);
         musicAdapter = new MusicAdapter();
@@ -68,10 +74,10 @@ public class MusicFragment extends Fragment implements View.OnClickListener {
 
     static class MusicViewHolder extends RecyclerView.ViewHolder {
 
-        TextView albumCover;
         TextView bandName;
         TextView songName;
         TextView releaseYear;
+        ImageView lyrics;
 
         public MusicViewHolder(@NonNull @NotNull View itemView) {
 
@@ -80,9 +86,10 @@ public class MusicFragment extends Fragment implements View.OnClickListener {
             bandName = itemView.findViewById(R.id.bandName);
             songName = itemView.findViewById(R.id.songName);
             releaseYear = itemView.findViewById(R.id.releaseYear);
-
+            lyrics = itemView.findViewById(R.id.lyricMenu);
 
         }
+
     }
 
 
