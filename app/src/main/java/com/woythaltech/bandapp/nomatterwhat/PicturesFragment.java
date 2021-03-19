@@ -104,7 +104,7 @@ public class PicturesFragment extends Fragment implements View.OnClickListener{
             Picture picture = pictureList.get(position);
 
             holder.leftImageText.setText(picture.getLeftImageText());
-            holder.rightImageText.setText(picture.getLeftImageText());
+            holder.rightImageText.setText(picture.getRightImageText());
 
 
         }
