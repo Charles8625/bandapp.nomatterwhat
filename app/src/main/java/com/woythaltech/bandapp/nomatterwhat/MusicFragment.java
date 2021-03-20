@@ -44,15 +44,12 @@ public class MusicFragment extends Fragment implements View.OnClickListener {
         View musicFragView =  inflater.inflate(R.layout.fragment_music, container, false);
 
         // For testing purposes, will grab these from json file later
-        Song trance = new Song("Trance", "No Matter What", "2017", "Lyrics");
-        Song locked = new Song("Locked and Loaded", "No Matter What", "2017", "Lyrics");
-        Song biPolar = new Song("Bi-Polar", "No Matter What", "2017", "Lyrics");
 
         songList.clear();
 
-        songList.add(trance);
-        songList.add(locked);
-        songList.add(biPolar);
+        for (int i = 0; i < 11; i++){
+            songList.add(new Song("Trance", "No Matter What", "2017", "Lyrics"));
+        }
 
         ///////////////////////////////
 

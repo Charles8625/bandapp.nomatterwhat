@@ -37,17 +37,16 @@ public class ShowsFragment extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         View showFragView =  inflater.inflate(R.layout.fragment_shows, container, false);
 
-        Show irishMill = new Show("Irish Mill", "123 Route 83, " +
-                "Mundelein IL 60060", "3/7/21", "7:00pm");
-        Show houseOfBlues = new Show("House of Blues", "423 State ST, " +
-                "Chicago IL 60203", "4/27/21", "6:30pm");
-        Show facebookLive = new Show("Facebook Live", "Wherever you are",
-                "5/17/21", "6:00pm");
 
+        // Testing purposes
         showList.clear();
-        showList.add(irishMill);
-        showList.add(houseOfBlues);
-        showList.add(facebookLive);
+
+        for (int i = 0; i < 11; i++){
+            showList.add(new Show("Irish Mill", "123 Route 83, " +
+                    "Mundelein IL 60060", "3/7/21", "7:00pm"));
+        }
+
+        //////////////////////////////
 
         recyclerView = showFragView.findViewById(R.id.recyclerViewShows);
         showAdapter = new ShowsFragment.ShowAdapter();

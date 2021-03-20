@@ -1,18 +1,26 @@
 package com.woythaltech.bandapp.nomatterwhat;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.text.Layout;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,32 +29,28 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView albumCover;
     private static final String TAG = "MainActivity";
+    private TextView lyricScroll;
+    private RecyclerView recyclerViewShows;
+    private Show show;
 
-    private static final String IMAGE_URL =
-            "https://www.nasa.gov/sites/default/files/images/159427main_image_feature_666_ys_full.jpg";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-
-        setupTabs();
-
         albumCover = findViewById(R.id.albumCover);
+        recyclerViewShows = findViewById(R.id.recyclerViewShows);
+        setupTabs();
     }
-
-
 
     public void setupTabs() {
 
         TabLayout tabLayout = findViewById(R.id.toolbar);
         ViewPager viewPager = findViewById(R.id.viewPager);
         TabAdapter adapter = new TabAdapter(getSupportFragmentManager());
-
         viewPager.setAdapter(adapter);
-
         tabLayout.setupWithViewPager(viewPager);
-
         TabLayout.Tab t;
 
         t = tabLayout.getTabAt(0);
@@ -89,15 +93,26 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onTabReselected: " + tab.getContentDescription());
             }
         });
-
-
     }
 
     public void onClick(View view) {
 
         // Bring up scrollable dialog showing the lyrics
+        // Lyrics will be taken from a file instead of hard coded
         if (view.getId() == R.id.lyricMenu){
-            Toast.makeText(this, "Lyrics are Here", Toast.LENGTH_LONG).show();
+
+            LayoutInflater inflater = LayoutInflater.from(this);
+            @SuppressLint("InflateParams")
+            final View lyricView = inflater.inflate(R.layout.lyric_dialog, null);
+
+            lyricScroll = lyricView.findViewById(R.id.lyricScroll);
+            lyricScroll.setMovementMethod(new ScrollingMovementMethod());
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Trance");
+            builder.setView(lyricView);
+            AlertDialog dialog = builder.create();
+            dialog.show();
         }
 
         // Bring up BandCamp page
@@ -107,13 +122,20 @@ public class MainActivity extends AppCompatActivity {
 
         // Bring up pictures for this show
         if (view.getId() == R.id.leftImage){
-            Toast.makeText(this, "Left Image", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "This will bring up slideshow of pictures", Toast.LENGTH_LONG).show();
         }
 
         // Bring up pictures for this show
         if (view.getId() == R.id.rightImage){
-            Toast.makeText(this, "Right Image", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "This will bring up slideshow of pictures", Toast.LENGTH_LONG).show();
         }
 
+        // Bring up YouTube
+        if (view.getId() == R.id.videoPicture){
+            Toast.makeText(this, "This will bring up our YouTube", Toast.LENGTH_LONG).show();
+        }
+
+        // Need action for clicking the shows
+        // Need action for clicking the songs
     }
 }
