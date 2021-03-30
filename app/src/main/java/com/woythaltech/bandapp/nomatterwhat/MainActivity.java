@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         albumCover = findViewById(R.id.albumCover);
         recyclerViewShows = findViewById(R.id.recyclerViewShows);
         setupTabs();
+
     }
 
     public void setupTabs() {

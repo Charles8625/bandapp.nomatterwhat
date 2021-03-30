@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1054583994853",
+    "project_id": "no-matter-what",
+    "storage_bucket": "no-matter-what.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054583994853:android:a455ce55d482c8a505570c",
+        "android_client_info": {
+          "package_name": "com.woythaltech.bandapp.nomatterwhat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054583994853-dupql86eqvc9rmfe7q1bc8cfef1vi8dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKjV4oxjT3Rm_p6no24Tu2T7cO8ICzwfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054583994853-dupql86eqvc9rmfe7q1bc8cfef1vi8dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -41,6 +41,7 @@ public class MusicFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
         View musicFragView =  inflater.inflate(R.layout.fragment_music, container, false);
 
         // For testing purposes, will grab these from json file later
