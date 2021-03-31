@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 public class MerchFragment extends Fragment {
 
     public MerchFragment() {
-        // Required empty public constructor
+
     }
 
     static MerchFragment newInstance() {

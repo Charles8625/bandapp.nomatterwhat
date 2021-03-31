@@ -17,7 +17,7 @@
             android:layout_marginBottom="32dp"
             android:background="@color/white"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="173dp" />
+            app:layout_constraintGuide_percent="0.34" />
 
         <EditText
             android:id="@+id/editTextTextPersonName"
@@ -41,7 +41,7 @@
             android:layout_marginBottom="16dp"
             android:background="@color/white"
             android:ems="10"
-            android:hint="Username"
+            android:hint="@string/username"
             android:inputType="textPersonName"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -56,7 +56,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#8A8787"
-            android:text="Login"
+            android:onClick="onClick"
+            android:text="@string/login"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,12 +69,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Become VIP"
+            android:onClick="onClick"
+            android:text="@string/become_vip"
             android:textAlignment="center"
             android:textColor="#0C80DC"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/vipLogin" />
+
+        <TextView
+            android:id="@+id/forgotPW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="onClick"
+            android:text="@string/forgot_password"
+            android:textAlignment="center"
+            android:textColor="#A3A0A0"
+            app:layout_constraintEnd_toEndOf="@+id/becomeVIP"
+            app:layout_constraintStart_toStartOf="@+id/becomeVIP"
+            app:layout_constraintTop_toBottomOf="@+id/becomeVIP" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -3,4 +3,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="trance_lyrics">Devils with halos have all the angels hypnotized\nBlack tears rolling down a pale chin underneath eyes wide open\nSubdued by some words from a tongue\nLet loose by a liar like fire from the sun\nRun but you can’t hide\nOpen wide come inside\nWild eyes in a trance We can watch ‘em dance until they bleed\nWild eyes in a trance We can dance until we see\nMirrors don’t lie I know time goes so slow\nIn a trance we can dance until we see\nAngels with whips and chains have all the demons begging for pain\nRain it on me till I can’t see! They plea and they plea\nHow does it feel to be above me?\nI know you hate to love me\nJust tell the truth cause I know you won’t lie, so don’t deny\nWild Eyes\nDevils with halos have all the angels hypnotized\nBlack tears rolling down a pale chin underneath eyes wide open\nSubdued by some words from a tongue\nLet loose by a liar like fire from the sun\nRun but you can’t hide\nOpen wide come inside\nWild eyes in a trance We can watch ‘em dance until they bleed\nWild eyes in a trance We can dance until we see\nMirrors don’t lie I know time goes so slow\nIn a trance we can dance until we see\nAngels with whips and chains have all the demons begging for pain\nRain it on me till I can’t see! They plea and they plea\nHow does it feel to be above me?\nI know you hate to love me\nJust tell the truth cause I know you won’t lie, so don’t deny\nWild Eyes</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="register">Register</string>
+    <string name="become_vip">Become VIP</string>
+    <string name="forgot_password">forgot your password?</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
 </resources>

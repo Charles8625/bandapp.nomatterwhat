@@ -24,7 +24,7 @@ public class ShowsFragment extends Fragment implements View.OnClickListener{
     private ShowAdapter showAdapter;
 
     public ShowsFragment() {
-        // Required empty public constructor
+
     }
 
     static ShowsFragment newInstance() {

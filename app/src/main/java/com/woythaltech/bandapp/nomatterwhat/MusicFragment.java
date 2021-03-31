@@ -26,11 +26,9 @@ public class MusicFragment extends Fragment implements View.OnClickListener {
     public final static List<Song> songList = new ArrayList<>();
     private RecyclerView recyclerView;
     private MusicFragment.MusicAdapter musicAdapter;
-
-
-
+    
     public MusicFragment() {
-        // Required empty public constructor
+
     }
 
     static MusicFragment newInstance() {

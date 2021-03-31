@@ -27,7 +27,7 @@ public class PicturesFragment extends Fragment implements View.OnClickListener{
     private PicturesFragment.PicturesAdapter picturesAdapter;
 
     public PicturesFragment() {
-        // Required empty public constructor
+
     }
 
     static PicturesFragment newInstance() {

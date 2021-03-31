@@ -24,7 +24,7 @@ public class VideosFragment extends Fragment implements View.OnClickListener{
     private VideosFragment.VideosAdapter videosAdapter;
 
     public VideosFragment() {
-        // Required empty public constructor
+
     }
 
     static VideosFragment newInstance() {
@@ -34,7 +34,7 @@ public class VideosFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View videoFragView =  inflater.inflate(R.layout.fragment_videos, container, false);
 
         videoList.clear();
