@@ -43,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewShows = findViewById(R.id.recyclerViewShows);
         setupTabs();
 
+        // Hide Action Bar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().hide();
+        }
+
     }
 
     public void setupTabs() {

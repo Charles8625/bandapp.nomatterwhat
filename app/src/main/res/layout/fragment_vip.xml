@@ -25,7 +25,8 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:autofillHints="password" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -35,7 +36,7 @@
             app:layout_constraintGuide_percent="0.34" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/vipUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -47,6 +48,7 @@
             android:textColor="#000000"
             android:textColorHint="#878383"
             android:textSize="24sp"
+            android:autofillHints="username"
             app:layout_constraintBottom_toTopOf="@+id/vipPassword"
             app:layout_constraintEnd_toEndOf="@+id/vipPassword"
             app:layout_constraintStart_toStartOf="@+id/vipPassword" />
@@ -56,7 +58,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#8A8787"
-            android:onClick="onClick"
             android:text="@string/login"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -69,10 +70,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:onClick="onClick"
             android:text="@string/become_vip"
             android:textAlignment="center"
-            android:textColor="#0C80DC"
+            android:textColor="#D31010"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:onClick="onClick"
             android:text="@string/forgot_password"
             android:textAlignment="center"
             android:textColor="#A3A0A0"

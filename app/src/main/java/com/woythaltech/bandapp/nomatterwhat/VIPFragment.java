@@ -3,6 +3,7 @@ package com.woythaltech.bandapp.nomatterwhat;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -32,7 +33,9 @@ public class VIPFragment extends Fragment{
                              Bundle savedInstanceState) {
 
 
+
         view = inflater.inflate(R.layout.fragment_vip, container, false);
+
 
         view.findViewById(R.id.vipLogin).setOnClickListener(v -> login());
         view.findViewById(R.id.becomeVIP).setOnClickListener(v -> becomeVIP());
