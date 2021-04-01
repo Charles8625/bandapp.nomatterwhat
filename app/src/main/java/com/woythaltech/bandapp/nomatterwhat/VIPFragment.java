@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -65,12 +66,11 @@ public class VIPFragment extends Fragment {
     }
 
     private void becomeVIP() {
-        Intent intent = new Intent(this.getActivity(), BecomeVIP.class);
-        startActivity(intent);
+        startActivity(new Intent(this.getActivity(), BecomeVIP.class));
     }
 
     private void forgotPW() {
-        Toast.makeText(this.getActivity(), "Get new PW", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this.getActivity(), ForgotPassword.class));
     }
 
     private void userLogin() {
@@ -97,8 +97,15 @@ public class VIPFragment extends Fragment {
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if(task.isSuccessful()){
-                // Go to Profile Activity
-                startActivity(new Intent(getActivity(), Profile.class));
+
+                //Email Verification
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if(user.isEmailVerified()) {
+                    startActivity(new Intent(getActivity(), Profile.class));
+                } else {
+                    user.sendEmailVerification();
+                    Toast.makeText(this.getActivity(), "Check your email", Toast.LENGTH_LONG).show();
+                }
             } else {
                 Toast.makeText(getActivity(), "Failed to Login. Please check your credentials", Toast.LENGTH_SHORT).show();
             }
