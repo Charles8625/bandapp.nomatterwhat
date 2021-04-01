@@ -13,6 +13,8 @@ import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView lyricScroll;
     private RecyclerView recyclerViewShows;
     private Show show;
+    private ImageButton play;
+    private ImageButton pause;
 
 
     @Override
@@ -41,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         albumCover = findViewById(R.id.albumCover);
         recyclerViewShows = findViewById(R.id.recyclerViewShows);
+        play = findViewById(R.id.play);
+        pause = findViewById(R.id.pause);
+        pause.setVisibility(View.GONE);
+
         setupTabs();
 
         // Hide Action Bar
@@ -139,6 +147,27 @@ public class MainActivity extends AppCompatActivity {
         // Bring up YouTube
         if (view.getId() == R.id.videoPicture){
             Toast.makeText(this, "This will bring up our YouTube", Toast.LENGTH_LONG).show();
+        }
+
+        // Media Buttons
+        if (view.getId() == R.id.play){
+            play.setVisibility(View.GONE);
+            pause.setVisibility(View.VISIBLE);
+            Toast.makeText(this, "Play  song", Toast.LENGTH_SHORT).show();
+        }
+
+        if (view.getId() == R.id.pause){
+            pause.setVisibility(View.GONE);
+            play.setVisibility(View.VISIBLE);
+            Toast.makeText(this, "Pause song", Toast.LENGTH_SHORT).show();
+        }
+
+        if (view.getId() == R.id.song_back){
+            Toast.makeText(this, "Move to last song", Toast.LENGTH_SHORT).show();
+        }
+
+        if (view.getId() == R.id.song_forward){
+            Toast.makeText(this, "Move to next song", Toast.LENGTH_SHORT).show();
         }
 
         // Need action for clicking the shows

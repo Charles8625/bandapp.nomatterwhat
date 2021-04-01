@@ -57,6 +57,7 @@
         android:id="@+id/play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,29 +68,41 @@
         android:id="@+id/song_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/play"
-        app:layout_constraintTop_toTopOf="@+id/play"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="40dp"
+        android:onClick="onClick"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
         app:srcCompat="@android:drawable/ic_media_previous" />
 
     <ImageButton
         android:id="@+id/song_forward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toEndOf="@+id/play"
-        app:layout_constraintTop_toTopOf="@+id/play"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:onClick="onClick"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
         app:srcCompat="@android:drawable/ic_media_next" />
 
     <ImageButton
         android:id="@+id/pause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
+        android:onClick="onClick"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBar"
         app:srcCompat="@android:drawable/ic_media_pause" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
